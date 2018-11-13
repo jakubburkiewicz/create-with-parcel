@@ -32,4 +32,4 @@ yarn add react react-dom
 yarn add -D parcel-bundler babel-preset-react babel-preset-env
 node -e 'var obj={presets:["env", "react"]};console.log(JSON.stringify(obj, null, 2));' > .babelrc
 echo "All done. To get started"
-echo "npm run dev"
+echo "cd $project; npm run dev"
