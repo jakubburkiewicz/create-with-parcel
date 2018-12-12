@@ -24,7 +24,12 @@ cat << EOL > src/index.html
 </body>
 </html>
 EOL
-echo "console.log('ready')" > src/index.js
+cat << EOL2 > src/index.js
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+ReactDOM.render(<h1>Hello React</h1>, document.getElementById('root'))
+EOL2
 yarn init -y
 node -e 'var obj = require("./package.json"); obj.scripts={ dev: "parcel ./src/index.html", build: "parcel build ./src/index.html/" }; console.log(JSON.stringify(obj, null, 2));' > _package.json
 mv _package.json package.json
