@@ -33,7 +33,7 @@ EOL2
 yarn init -y
 node -e 'var obj = require("./package.json"); obj.scripts={ dev: "parcel ./src/index.html", build: "parcel build ./src/index.html/" }; console.log(JSON.stringify(obj, null, 2));' > _package.json
 mv _package.json package.json
-yarn add react react-dom
+yarn add react react-dom json5
 yarn add -D parcel-bundler babel-preset-react babel-preset-env
 node -e 'var obj={presets:["env", "react"]};console.log(JSON.stringify(obj, null, 2));' > .babelrc
 echo "All done. To get started"
