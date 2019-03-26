@@ -24,12 +24,22 @@ cat << EOL > src/index.html
 </body>
 </html>
 EOL
+
+cat << EOL1 > src/App.js
+import React from 'react'
+export default () => (
+    <div>Hello React!</div>
+)
+EOL1
+
 cat << EOL2 > src/index.js
 import React from 'react'
 import ReactDOM from 'react-dom'
+import App from './App'
 
-ReactDOM.render(<h1>Hello React</h1>, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))
 EOL2
+
 cat << EOL3 > .gitignore
 # dependencies
 /node_modules
@@ -60,4 +70,4 @@ yarn add react react-dom json5
 yarn add -D parcel-bundler babel-preset-react babel-preset-env babel-plugin-transform-class-properties
 node -e 'var obj={presets:["env", "react"],plugins: ["transform-class-properties"]};console.log(JSON.stringify(obj, null, 2));' > .babelrc
 echo "All done. To get started"
-echo "cd $project; npm run dev"
+echo "cd $project; npm start"
