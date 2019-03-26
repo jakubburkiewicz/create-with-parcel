@@ -13,14 +13,14 @@ cat << EOL > src/index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
 </head>
 <body>
-    <div id="root"></div>
-    <script src="./index.js"></script>    
+  <div id="root"></div>
+  <script src="./index.js"></script>  
 </body>
 </html>
 EOL
@@ -28,7 +28,9 @@ EOL
 cat << EOL1 > src/App.js
 import React from 'react'
 export default () => (
-    <div>Hello React!</div>
+  <div>
+    Hello React!
+  </div>
 )
 EOL1
 
@@ -37,7 +39,14 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+)
+
+/*if (module.hot) {
+  module.hot.accept()
+}*/
 EOL2
 
 cat << EOL3 > .gitignore
