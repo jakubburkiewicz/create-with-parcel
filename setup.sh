@@ -60,7 +60,7 @@ cat << EOL3 > .gitignore
 /coverage
 
 # production
-/build
+/dist
 
 # misc
 .DS_Store
