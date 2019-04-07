@@ -52,6 +52,7 @@ EOL2
 cat << EOL3 > .gitignore
 # dependencies
 /node_modules
+/.cache
 /.pnp
 .pnp.js
 
