@@ -74,7 +74,7 @@ yarn-debug.log*
 yarn-error.log*
 EOL3
 yarn init -y
-node -e 'var obj = require("./package.json"); obj.scripts={ start: "parcel ./src/index.html", build: "parcel build ./src/index.html/" }; console.log(JSON.stringify(obj, null, 2));' > _package.json
+node -e 'var obj = require("./package.json"); obj.scripts={ start: "parcel ./src/index.html", build: "parcel build ./src/index.html" }; console.log(JSON.stringify(obj, null, 2));' > _package.json
 mv _package.json package.json
 yarn add react react-dom json5
 yarn add -D parcel-bundler babel-preset-react babel-preset-env babel-plugin-transform-class-properties
