@@ -74,10 +74,10 @@ yarn-debug.log*
 yarn-error.log*
 EOL3
 yarn init -y
-node -e 'var obj = require("./package.json"); obj.scripts={ start: "parcel ./src/index.html", build: "parcel build ./src/index.html" }; console.log(JSON.stringify(obj, null, 2));' > _package.json
+node -e 'var obj = require("./package.json"); obj.scripts={ start: "parcel ./src/index.html --open", build: "parcel build ./src/index.html" }; console.log(JSON.stringify(obj, null, 2));' > _package.json
 mv _package.json package.json
 yarn add react react-dom json5
-yarn add -D parcel-bundler babel-preset-react babel-preset-env babel-plugin-transform-class-properties
-node -e 'var obj={presets:["env", "react"],plugins: ["transform-class-properties"]};console.log(JSON.stringify(obj, null, 2));' > .babelrc
+yarn add -D parcel-bundler babel-preset-react babel-preset-env babel-plugin-transform-object-rest-spread babel-plugin-transform-class-properties
+node -e 'var obj={presets:["env", "react"],plugins: ["transform-object-rest-spread", "transform-class-properties"]};console.log(JSON.stringify(obj, null, 2));' > .babelrc
 echo "All done. To get started"
 echo "cd $project; npm start"
